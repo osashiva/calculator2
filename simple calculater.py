@@ -1,0 +1,53 @@
+from tkinter import *
+def BtnClick(number):
+    global val
+    val=val+str(number)
+    data.set(val)
+def BtnClear():
+    global val
+    val=""
+    data.set("")
+def BtnEquals():
+    global val
+    result=str(eval(val))
+    data.set(result)
+root=Tk()
+root.title("CALCULATER")
+root.geometry("361x381+500+200")
+val=""
+data=StringVar()
+display=Entry(root,textvariable=data,bd=29,justify="right",bg="powder blue",font=("ariel",20))
+display.grid(row=0,columnspan=4)
+Btn7=Button(root,text="7",font=("Ariel",12,"bold"),bd=12,height=2,width=6,bg="#FFD3A3",command=lambda:BtnClick(7))
+Btn7.grid(row=1,column=0)
+Btn8=Button(root,text="8",font=("Ariel",12,"bold"),bd=12,height=2,width=6,bg="#FFD3A3",command=lambda:BtnClick(8))
+Btn8.grid(row=1,column=1)
+Btn9=Button(root,text="9",font=("Ariel",12,"bold"),bd=12,height=2,width=6,bg="#FFD3A3",command=lambda:BtnClick(9))
+Btn9.grid(row=1,column=2)
+Btn_add=Button(root,text="+",font=("Ariel",12,"bold"),bd=12,height=2,width=6,bg="#FFD3A3",command=lambda:BtnClick("+"))
+Btn_add.grid(row=1,column=3)
+Btn4=Button(root,text="4",font=("Ariel",12,"bold"),bd=12,height=2,width=6,bg="#FFD3A3",command=lambda:BtnClick(4))
+Btn4.grid(row=2,column=0)
+Btn5=Button(root,text="5",font=("Ariel",12,"bold"),bd=12,height=2,width=6,bg="#FFD3A3",command=lambda:BtnClick(5))
+Btn5.grid(row=2,column=1)
+Btn6=Button(root,text="6",font=("Ariel",12,"bold"),bd=12,height=2,width=6,bg="#FFD3A3",command=lambda:BtnClick(6))
+Btn6.grid(row=2,column=2)
+Btn_sub=Button(root,text="-",font=("Ariel",12,"bold"),bd=12,height=2,width=6,bg="#FFD3A3",command=lambda:BtnClick("-"))
+Btn_sub.grid(row=2,column=3)
+Btn1=Button(root,text="1",font=("Ariel",12,"bold"),bd=12,height=2,width=6,bg="#FFD3A3",command=lambda:BtnClick(1))
+Btn1.grid(row=3,column=0)
+Btn2=Button(root,text="2",font=("Ariel",12,"bold"),bd=12,height=2,width=6,bg="#FFD3A3",command=lambda:BtnClick(2))
+Btn2.grid(row=3,column=1)
+Btn3=Button(root,text="3",font=("Ariel",12,"bold"),bd=12,height=2,width=6,bg="#FFD3A3",command=lambda:BtnClick(3))
+Btn3.grid(row=3,column=2)
+Btn_mul=Button(root,text="*",font=("Ariel",12,"bold"),bd=12,height=2,width=6,bg="#FFD3A3",command=lambda:BtnClick("*"))
+Btn_mul.grid(row=3,column=3)
+Btnc=Button(root,text="c",font=("Ariel",12,"bold"),bd=12,height=2,width=6,bg="#FFD3A3",command=lambda:BtnClear())
+Btnc.grid(row=4,column=0)
+Btn0=Button(root,text="0",font=("Ariel",12,"bold"),bd=12,height=2,width=6,bg="#FFD3A3",command=lambda:BtnClick(0))
+Btn0.grid(row=4,column=1)
+Btn_div=Button(root,text="/",font=("Ariel",12,"bold"),bd=12,height=2,width=6,bg="#FFD3A3",command=lambda:BtnClick("/"))
+Btn_div.grid(row=4,column=2)
+Btn_equal=Button(root,text="=",font=("Ariel",12,"bold"),bd=12,height=2,width=6,bg="#FFD3A3",command=BtnEquals)
+Btn_equal.grid(row=4,column=3)
+root.mainloop()
